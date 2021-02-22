@@ -17,3 +17,13 @@ li a{
   color: #3E5C76;
   float: left;
 }
+a:visited {
+  color: #0D1321;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: #748CAB;
+  background-color: #F0EBD8;
+  text-decoration: underline;
+}
