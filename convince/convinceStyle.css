@@ -1,1 +1,38 @@
+ul{
+  list-style-type: none;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: #1D2D44;
+  top: 0%;
+  
+}
+a:hover {
+  color: #748CAB;
+  background-color: #F0EBD8;
+  text-decoration: underline;
+}
+li a{
+  display: block;
+  text-decoration: none;
+  padding: 15px 40px;
+  color: C95485;
+  font-size: 20px;
+  color: #3E5C76;
+  float: left;
+}
 
+li{
+  display: inline;
+  float: left;
+  overflow: hidden;
+}
+
+li a{
+  display: block;
+  text-decoration: none;
+  padding: 15px 40px;
+  color: antique white;
+  font-size: 20px;
+}
