@@ -2,8 +2,8 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  
+  </head>
+  <body>
 <style>
 
 
@@ -67,6 +67,122 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+  .logo {
+  max-width: 100%;
+  max-height: 100%;
+  justify-content: center;
+  object-fit: contain;
+}
+.slide-content {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+#slider input[type=radio] {
+   display: none;
+}
+#slider label {
+   cursor:pointer;
+   text-decoration: none;
+}
+#slides {
+   padding: 10px;
+   border: 3px solid #ccc;
+   background: #fff;
+   position: relative;
+   z-index: 1;
+}
+#overflow {
+   width: 100%;
+   overflow: hidden;
+}
+#slide1:checked ~ #slides .inner {
+   margin-left: 0;
+}
+#slide2:checked ~ #slides .inner {
+   margin-left: -100%;
+}
+#slide3:checked ~ #slides .inner {
+   margin-left: -200%;
+}
+#slide4:checked ~ #slides .inner {
+   margin-left: -300%;
+}
+#slides .inner {
+   transition: margin-left 520ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+   width: 400%;
+   line-height: 0;
+   height: 400px;
+}
+#slides .slide {
+   width: 25%;
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   color: #fff;
+}
+#slides .slide_1 {
+   background: #003459;
+}
+#slides .slide_2 {
+   background: #00171F;
+}
+#slides .slide_3 {
+   background: #007EA7;
+}
+#slides .slide_4 {
+   background: #00A8E8;
+}
+#slide1:checked ~ #controls label:nth-child(2),
+#slide2:checked ~ #controls label:nth-child(3),
+#slide3:checked ~ #controls label:nth-child(4),
+#slide4:checked ~ #controls label:nth-child(1) {
+   background: url(https://image.flaticon.com/icons/svg/130/130884.svg) no-repeat;
+   float:right;
+   margin: 0 -50px 0 0;
+   display: block;
+}
+#slide1:checked ~ #controls label:nth-last-child(2),
+#slide2:checked ~ #controls label:nth-last-child(3),
+#slide3:checked ~ #controls label:nth-last-child(4),
+#slide4:checked ~ #controls label:nth-last-child(1) {
+   background: url(https://image.flaticon.com/icons/svg/130/130882.svg) no-repeat;
+   float:left;
+   margin: 0 0 0 -50px;
+   display: block;
+}
+#bullets {
+   margin: 15px 0 0;
+   text-align: center;
+}
+#bullets label {
+   display: inline-block;
+   width: 10px;
+   height: 10px;
+   border-radius:100%;
+   background: #ccc;
+   margin: 0 10px;
+}
+#slide1:checked ~ #bullets label:nth-child(1),
+#slide2:checked ~ #bullets label:nth-child(2),
+#slide3:checked ~ #bullets label:nth-child(3),
+#slide4:checked ~ #bullets label:nth-child(4) {
+   background: #444;
+}
+   #slides {
+      max-width: calc(100% - 140px);
+      margin: 0 auto;
+   }
+}
+.logo {
+width: auto;  
+justity-content: center;  
+padding: 15px;
+  border: 3px clear;
+}
 </style>
 </head>
 <body>
@@ -88,7 +204,46 @@
     </div>
   </div>
 </div>
-
+    <div id="slider">
+   <input type="radio" name="slider" id="slide1" checked>
+   <input type="radio" name="slider" id="slide2">
+   <input type="radio" name="slider" id="slide3">
+   <input type="radio" name="slider" id="slide4">
+   <div id="slides">
+      <div id="overflow">
+         <div class="inner">
+            <div class="slide slide_1">
+               <div class="slide-content">
+                 <div class="logo">
+                  <img src="https://cdn.discordapp.com/attachments/829075949551222844/837186269976985610/avengerslogo.png"> </img>
+                </div>
+               </div>
+            </div>
+            <div class="slide slide_2">
+               <div class="slide-content">
+                  <img src="https://cdn.discordapp.com/attachments/829075949551222844/837539549416128512/characters1.png"> </img>
+               </div>
+            </div>
+            <div class="slide slide_3">
+               <div class="slide-content">
+                  <img src="https://cdn.discordapp.com/attachments/829075949551222844/837539560237694976/info1.png"> </img>
+               </div>
+            </div>
+            <div class="slide slide_4">
+               <div class="slide-content">
+                  <img src="https://cdn.discordapp.com/attachments/829075949551222844/837539561453781042/movies1.png"> </img>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="bullets">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+      <label for="slide4"></label>
+   </div>
+</div>
 
 
 </body>
